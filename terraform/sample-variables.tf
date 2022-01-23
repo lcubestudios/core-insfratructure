@@ -42,7 +42,7 @@ variable "authorized_keys" {
   #https://api.linode.com/v4/profile/sshkeys
   description = "Get SSH key ID or paste SSH key"
   #value = 
-  default = "SSH KEY"
+  default = "Your SSH KEY"
 }
 
 variable "tags" {

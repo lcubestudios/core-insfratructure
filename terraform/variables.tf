@@ -5,7 +5,7 @@ variable "linode_token" {
   #https://cloud.linode.com/profile/tokens
   description = "Linode API Personal Access Token"
   #value = 
-  default = "Your Token"
+  default = "d23cb95659c6115e06a09d96fe7a3b63a7df2ce7ed66283e0a6fdd00e69b396d"
 }
 variable "image" {
   #https://api.linode.com/v4/images/
@@ -33,16 +33,16 @@ variable "instance_name" {
   default = "lcubes-demo-server"
 }
 variable "key_label" {
-  description = "Key name"
+  description = "Public Key"
   #value = 
-  default = "Your COMPUTER NAME"
+  default = "cloudninja"
 }
 variable "authorized_keys" {
   #https://api.linode.com/v4/account/users
   #https://api.linode.com/v4/profile/sshkeys
   description = "Get SSH key ID or paste SSH key"
   #value = 
-  default = "SSH KEY"
+  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUZkTssxTl5GgX4LSxSBHh+flyTA2nHirl64HDh1rkPmd4DHI/+Yhy3UzepPrBbIMIfEZRNJybaXPpcQhS+2ehjZiSwvkuGrgkDcRi1h+96PZULp2tmGk/nk9GM2y9YEZLsuIcdXqdD8kj0LpcI2k1l7BfeeKUoW3TnPJk8jxVF45F5AlObJTYpFdQEOsgJZcL/1jPMcYqAVrGtxFRpfVrzGLSJBOXsBYulEO3p1kyJtIWRTdpWHqNMULRHYyvwjnXCBX24eGnRAgMTTQJ7HPmvD8PIW/9oNDPLMkkiPp1V6OrTxARqjwPbuxGkMF0oKTDgMf6ahW5u5uHJtjDuTh7 cloudninja@CloudNinja"
 }
 
 variable "tags" {
