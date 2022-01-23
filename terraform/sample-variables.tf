@@ -75,8 +75,3 @@ variable "backups" {
   #value = 
   default = false
 }
-
-variable "stackscript_id" {
-  type    = number
-  default = 964449
-}

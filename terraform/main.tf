@@ -8,9 +8,6 @@ resource "linode_sshkey" "main_key" {
   #ssh_key = chomp(file(local.key))
   ssh_key = var.authorized_keys
 }
-data "linode_stackscript" "core_infracstructure" {
-  id = var.stackscript_id
-}
 # Start a linode server
 #resource "module name" "linode_id"
 resource "linode_instance" "terraform" {
