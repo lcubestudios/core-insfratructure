@@ -26,14 +26,6 @@ services:
       - "${PGA_HTTPS_PORT}:8143"
     depends_on:
       - db
-
-  #app:
-  #  container_name: dennys_app
-  #  image: dennys_app
-  #  build:
-  #    context: app #name of the folder
-  #  depends_on:
-  #    - postgres
-
+            
 volumes:
   pgdata: {}
