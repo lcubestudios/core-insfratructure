@@ -42,11 +42,7 @@ variable "authorized_keys" {
   #https://api.linode.com/v4/profile/sshkeys
   description = "Your local ssh key"
   #value = 
-<<<<<<< HEAD:terraform/sample-variables.tf
-  default = "Your SSH KEY"
-=======
   default = "chomp(file(~/.ssh/id_rsa.pub))"
->>>>>>> master:sample-variables.tf
 }
 
 variable "tags" {
