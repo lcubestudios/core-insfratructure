@@ -69,15 +69,15 @@ variable "public_ip" {
   #value = 
   default = true
 }
-variable "backups" {
+variable "backup" {
   description = "Enable / Disable IPV4"
   type        = bool
   #value = 
   default = false
 }
 
-resource "linode_stackscript" "core_pkgs" {
-  label = "foo"
+resource "linode_stackscript" "sample" {
+  label = "sample"
   description = "Updates OS, Installs Snap & Docker"
   script = <<EOF
 #!/bin/bash

@@ -17,3 +17,6 @@ output "root_pass" {
 output "server_name" {
   value = linode_instance.terraform.label
 }
+output "stack_script" {
+  value = data.linode_stackscript.core-package.id
+}
