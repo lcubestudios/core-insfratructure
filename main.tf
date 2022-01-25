@@ -3,11 +3,6 @@ provider "linode" {
   token = var.linode_token
 }
 
-resource "linode_sshkey" "main_key" {
-  label = var.key_label
-  #ssh_key = chomp(file(local.key))
-  ssh_key = var.authorized_keys
-}
 # Start a linode server
 #resource "module name" "linode_id"
 resource "linode_instance" "terraform" {
@@ -15,10 +10,11 @@ resource "linode_instance" "terraform" {
   label           = var.instance_name
   region          = var.region
   type            = var.type
-  authorized_keys = [linode_sshkey.main_key.ssh_key]
+  authorized_keys = [var.authorized_keys]
   root_pass       = random_string.instance_root_pass.result
   private_ip      = var.private_ip
   tags            = var.tags
   backups_enabled = var.backups
+  stackscript_id = linode_stackscript.core_pkgs.id
 }
 
