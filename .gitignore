@@ -1,3 +1,5 @@
-pgdata
-.env
 variables.tf
+.terraform*
+.env
+terraform.tfstate
+terraform.tfstate*

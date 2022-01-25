@@ -40,9 +40,13 @@ variable "key_label" {
 variable "authorized_keys" {
   #https://api.linode.com/v4/account/users
   #https://api.linode.com/v4/profile/sshkeys
-  description = "Get SSH key ID or paste SSH key"
+  description = "Your local ssh key"
   #value = 
+<<<<<<< HEAD:terraform/sample-variables.tf
   default = "Your SSH KEY"
+=======
+  default = "chomp(file(~/.ssh/id_rsa.pub))"
+>>>>>>> master:sample-variables.tf
 }
 
 variable "tags" {
@@ -69,9 +73,27 @@ variable "public_ip" {
   #value = 
   default = true
 }
-variable "backups" {
+variable "backup" {
   description = "Enable / Disable IPV4"
   type        = bool
   #value = 
   default = false
+}
+
+resource "linode_stackscript" "sample" {
+  label = "sample"
+  description = "Updates OS, Installs Snap & Docker"
+  script = <<EOF
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg lsb-release snap -y
+sudo snap install core; sudo snap refresh core
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+EOF
+  images = ["linode/ubuntu20.04"]
+  rev_note = "initial version"
 }
