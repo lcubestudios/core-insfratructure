@@ -1,3 +1,4 @@
+/*
 #--------------API DOCUMENTANTION------------#
 #------- https://www.linode.com/docs/api/ ---#
 #--------------API DOCUMENTANTION------------#
@@ -93,3 +94,4 @@ EOF
   images = ["linode/ubuntu20.04"]
   rev_note = "initial version"
 }
+*/
